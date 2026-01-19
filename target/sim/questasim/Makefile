@@ -42,7 +42,7 @@ USE_VIPS ?= 0
 ## @section Questasim Simulation
 
 ## Simulate the given executable using RTL simulationon with Siemens QuestaSIM.
-## 
+##
 ## The simulation can be invoked in various bootmode controllable via the
 ## bootmode parameter. The 'jtag_legacy' boot mode uses the legacy PULP JTAG TAP
 ## to preload the binary into L2 memory. 'jtag_openocd' uses the newer,
@@ -55,7 +55,7 @@ USE_VIPS ?= 0
 ## @param EXECUTABLE_PATH=/path/to/elf_binary/build/app The absolute path to the ELF binary to simulate
 ## @param GUI=1 If 1, start QuestaSIM in GUI mode, otherwise start in batch mode.
 ## @param VSIM_BIN=vsim The command to invoke the vsim binary.
-## @param BOOTMODE=jtag The bootmode to use to start PULPissimo. Possible values: jtag_legacy, jtag_openocd or fastboot. 
+## @param BOOTMODE=jtag The bootmode to use to start PULPissimo. Possible values: jtag_legacy, jtag_openocd or fastboot.
 .PHONY: run_sim
 run_sim: $(QUESTA_BUILD_DIR)/app.s19
 	ln -snf waves $(QUESTA_BUILD_DIR)/waves
@@ -112,16 +112,16 @@ clean_questasim:
 
 # Generate the compile scripts
 .PHONY: $(QUESTA_BUILD_DIR)/compile.tcl
-$(QUESTA_BUILD_DIR)/compile.tcl: $(PULPISSIMO_ROOT)/Bender.lock | $(PULPISSIMO_UTILS)/bender
+$(QUESTA_BUILD_DIR)/compile.tcl: $(PULPISSIMO_ROOT)/Bender.lock | $(BENDER)
 	mkdir -p $(QUESTA_BUILD_DIR)
 	echo 'set ROOT [file normalize [file dirname [info script]]/../..]' > $@
-	$(PULPISSIMO_UTILS)/bender script vsim $(BENDER_SCRIPTS_ARGS) --vlog-arg="$(VLOG_ARGS)" --vcom-arg="" | grep -v "set ROOT" >> $@
+	$(BENDER) script vsim $(BENDER_SCRIPTS_ARGS) --vlog-arg="$(VLOG_ARGS)" --vcom-arg="" | grep -v "set ROOT" >> $@
 
 .PHONY: $(QUESTA_BUILD_DIR)/compile_vip.tcl
-$(QUESTA_BUILD_DIR)/compile_vip.tcl: $(PULPISSIMO_ROOT)/Bender.lock | $(PULPISSIMO_UTILS)/bender
+$(QUESTA_BUILD_DIR)/compile_vip.tcl: $(PULPISSIMO_ROOT)/Bender.lock | $(BENDER)
 	mkdir -p $(QUESTA_BUILD_DIR)
 	echo 'set ROOT [file normalize [file dirname [info script]]/../..]' > $@
-	$(PULPISSIMO_UTILS)/bender script vsim $(BENDER_SCRIPTS_ARGS) $(BENDER_VIP_SCRIPT_ARGS) --vlog-arg="$(VLOG_ARGS)" --vcom-arg="" | grep -v "set ROOT" >> $@
+	$(BENDER) script vsim $(BENDER_SCRIPTS_ARGS) $(BENDER_VIP_SCRIPT_ARGS) --vlog-arg="$(VLOG_ARGS)" --vcom-arg="" | grep -v "set ROOT" >> $@
 
 # Convert the ELF binary to SREC format for simulation
 $(QUESTA_BUILD_DIR)/app.s19: $(EXECUTABLE_PATH)

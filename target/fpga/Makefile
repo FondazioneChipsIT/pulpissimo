@@ -14,7 +14,7 @@ clean_all: clean_genesys2 clean_zcu104 clean_nexys_video clean_nexys clean_zedbo
 .PHONY: $(PULPISSIMO_FPGA_ROOT)/pulpissimo/tcl/generated/compile.tcl
 $(PULPISSIMO_FPGA_ROOT)/pulpissimo/tcl/generated/compile.tcl:
 	mkdir -p $(PULPISSIMO_FPGA_ROOT)/pulpissimo/tcl/generated
-	$(PULPISSIMO_UTILS)/bender script vivado -t fpga -t xilinx > $@
+	$(BENDER) script vivado -t fpga -t xilinx > $@
 
 ## Generates the bistream for the genesys2 board
 genesys2: $(PULPISSIMO_FPGA_ROOT)/pulpissimo/tcl/generated/compile.tcl

@@ -1,17 +1,17 @@
 # Copyright 2022 ETH Zurich and University of Bologna
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #     http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# 
+#
 # Author: Manuel Eggimann
 
 # This utility makefile sets up a virtual environment in a newly create .venv
@@ -41,12 +41,12 @@ ifeq (,$(widlcard bin/padrick))
 	chmod a+x $(PULPISSIMO_UTILS)/padrick
 endif
 
-$(PULPISSIMO_UTILS)/bender:
+$(BENDER):
 ifeq (,$(wildcard bin/bender))
 	mkdir -p $(PULPISSIMO_UTILS)
-	cd $(PULPISSIMO_UTILS) && curl --proto '=https' --tlsv1.2 -sSf https://pulp-platform.github.io/bender/init \
+	cd $(PULPISSIMO_UTILS) && curl --proto '=https' --tlsv1.2 -sSf https://pulp-platform.github.io/bender/init -s -- 0.28.2\
 		| bash -s -- 0.28.0
-	touch $(PULPISSIMO_UTILS)/bender
+	touch $(BENDER)
 endif
 
 

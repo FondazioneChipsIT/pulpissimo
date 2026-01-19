@@ -25,9 +25,9 @@ SPYGLASS_WORKING_DIR = $(PULPISSIMO_ROOT)/build/spyglass
 include $(PULPISSIMO_ROOT)/utils/utils.mk
 
 .PHONY: $(SPYGLASS_WORKING_DIR)/sources.f
-$(SPYGLASS_WORKING_DIR)/sources.f: $(PULPISSIMO_UTILS)/bender
+$(SPYGLASS_WORKING_DIR)/sources.f: $(BENDER)
 	mkdir -p $(SPYGLASS_WORKING_DIR)
-	$(PULPISSIMO_UTILS)/bender script -t synthesis verilator > $(SPYGLASS_WORKING_DIR)/sources.f
+	$(BENDER) script -t synthesis verilator > $(SPYGLASS_WORKING_DIR)/sources.f
 
 .PHONY: lint_rtl
 ## Run spyglass lint with rtl_handoff methodology
