@@ -41,14 +41,5 @@ ifeq (,$(widlcard bin/padrick))
 	chmod a+x $(PULPISSIMO_UTILS)/padrick
 endif
 
-$(BENDER):
-ifeq (,$(wildcard bin/bender))
-	mkdir -p $(PULPISSIMO_UTILS)
-	cd $(PULPISSIMO_UTILS) && curl --proto '=https' --tlsv1.2 -sSf https://pulp-platform.github.io/bender/init -s -- 0.28.2\
-		| bash -s -- 0.28.0
-	touch $(BENDER)
-endif
-
-
 export PULPISSIMO_UTILS=$(mkfile_dir)/bin
 endif
