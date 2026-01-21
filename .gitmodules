@@ -5,5 +5,5 @@
 	path = sw/regression_tests
 	url = https://github.com/pulp-platform/regression_tests.git
 [submodule "efcl_ss"]
-	path = sw/efcl_ss
+	path = sw/efcl2026
 	url = https://github.com/pulp-platform/efcl_ss_exercises
