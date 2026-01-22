@@ -7,3 +7,7 @@
 [submodule "efcl_ss"]
 	path = sw/efcl2026
 	url = https://github.com/pulp-platform/efcl_ss_exercises
+[submodule "sw/efcl2026"]
+	url = https://github.com/FondazioneChipsIt/efcl_exercises
+[submodule "sw/pulp-runtime"]
+	url = https://github.com/FondazioneChipsIt/pulp-runtime
