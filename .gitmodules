@@ -1,9 +1,9 @@
-[submodule "pulp-runtime"]
-	path = sw/pulp-runtime
-	url = https://github.com/pulp-platform/pulp-runtime.git
 [submodule "regression_tests"]
 	path = sw/regression_tests
 	url = https://github.com/pulp-platform/regression_tests.git
-[submodule "efcl_ss"]
-	path = sw/efcl_ss
-	url = https://github.com/pulp-platform/efcl_ss_exercises
+[submodule "sw/efcl2026"]
+	url = https://github.com/FondazioneChipsIT/efcl_exercises.git
+	path = sw/efcl2026
+[submodule "sw/pulp-runtime"]
+	url = https://github.com/FondazioneChipsIt/pulp-runtime.git
+	path = sw/pulp-runtime

@@ -19,7 +19,7 @@ current_dir := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
 PULPISSIMO_ROOT=$(abspath $(current_dir)/..)
 
 ifneq (,$(wildcard /etc/iis.version))
-	include $(PULPISSIMO_ROOT)/utils/iis-env.mk
+	include $(PULPISSIMO_ROOT)/utils/efcl-ws-2026.mk
 endif
 
 include target/sim/questasim/Makefile
@@ -29,7 +29,7 @@ include $(PULPISSIMO_ROOT)/utils/utils.mk
 
 .PHONY: checkout
 ## Checkout all Bender IPs
-BENDER := bender
+BENDER ?= bender
 checkout:
 	$(BENDER) checkout
 
