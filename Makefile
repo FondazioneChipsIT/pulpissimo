@@ -18,6 +18,8 @@ mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
 current_dir := $(notdir $(patsubst %/,%,$(dir $(mkfile_path))))
 PULPISSIMO_ROOT=$(abspath $(current_dir)/..)
 
+BENDER ?= oseda -2025.07 bender
+
 ifneq (,$(wildcard /etc/iis.version))
 	include $(PULPISSIMO_ROOT)/utils/efcl-ws-2026.mk
 endif
