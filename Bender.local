@@ -1,0 +1,2 @@
+overrides:
+  hwpe-stream: { git: "https://github.com/pulp-platform/hwpe-stream.git", rev: 817d3a2e444bbdbec8c0c0058f921ce9ebd19935 }
