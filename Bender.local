@@ -1,2 +1,9 @@
 overrides:
-  hwpe-stream: { git: "https://github.com/pulp-platform/hwpe-stream.git", rev: 817d3a2e444bbdbec8c0c0058f921ce9ebd19935 }
+  hwpe-stream:          { git: "https://github.com/pulp-platform/hwpe-stream.git", rev: 817d3a2e444bbdbec8c0c0058f921ce9ebd19935 }
+  axi:                  { git: "https://github.com/pulp-platform/axi.git", version: =0.39.3 }
+  cluster_interconnect: { git: "https://github.com/pulp-platform/cluster_interconnect.git", version: =1.2.1 }
+  common_cells:         { git: "https://github.com/pulp-platform/common_cells.git", version: =1.35.0 }
+  common_verification:  { git: "https://github.com/pulp-platform/common_verification.git", version: =0.2.3 }
+  register_interface:   { git: "https://github.com/pulp-platform/register_interface.git", version: =0.4.4 }
+  scm:                  { git: "https://github.com/pulp-platform/scm.git", version: =1.1.1 }
+
