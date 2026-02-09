@@ -93,7 +93,7 @@ connect_net -objects [get_nets i_pulpissimo/i_soc_domain/jtag_trst_ni] -net i_pu
 # set for RuntimeOptimized implementation
 set_property "steps.opt_design.args.directive" "RuntimeOptimized" [get_runs impl_1]
 set_property "steps.place_design.args.directive" "RuntimeOptimized" [get_runs impl_1]
-set_property "steps.route_design.args.directive" "RuntimeOptimized" [get_runs impl_1]
+set_property "steps.route_design.args.directive" "NoTimingRelaxation" [get_runs impl_1]
 
 set_property STEPS.WRITE_BITSTREAM.ARGS.BIN_FILE true [get_runs impl_1]
 

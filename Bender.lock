@@ -150,10 +150,10 @@ packages:
     - udma_sdio
     - udma_uart
   pulp_soc:
-    revision: c34b8ec3664344ef8d7ea5b1fa296fcaf8006af5
+    revision: 95550a0470c11cd5ec7b0646d1016fc408ba6a97
     version: null
     source:
-      Git: https://github.com/pulp-platform/pulp_soc.git
+      Git: https://github.com/FondazioneChipsIt/pulp_soc.git
     dependencies:
     - adv_dbg_if
     - apb
